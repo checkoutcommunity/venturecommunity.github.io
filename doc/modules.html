@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+  <meta charset="utf-8">    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Документация</title>
+  <meta name="description" content="">
+  <link rel="icon" href="../favicon.ico@4" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon.ico@4" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="../template/img/safari_60.png@4">
+  <link rel="apple-touch-icon" sizes="76x76" href="../template/img/safari_76.png@4">
+  <link rel="apple-touch-icon" sizes="120x120" href="../template/img/safari_120.png@4">
+  <link rel="apple-touch-icon" sizes="152x152" href="../template/img/safari_152.png@4">
+  <link rel="yandex-tableau-widget" href="../template/manifest.json" />  
+  <link rel="stylesheet" href="../template/css/animate.css">
+  <link rel="stylesheet" href="../template/css/template.css@v=11.css" >
+  <link rel="stylesheet" href="../template/css/main.css@v=68.css">
+</head>
+<body class="preload">
+  <div class="wrapper">
+    <div class="mnav">
+      <ul>
+        <li class="auth-but"><a href="../panel/login.html">Войти</a></li>
+        <li class="creat-but"><a href="../panel/register.html">Регистрация</a></li>
+        <li><a href="../about.html">О сервисе</a></li>
+        <li><a href="../tariffs.html">Тарифы</a></li>
+        <li><a href="sci.html">Документация</a></li>
+        <li><a href="../support.html">Контакты</a></li>
+      </ul>
+    </div>          
+    <div id="content"> 
+      <header>
+       <div class="container fullsize">
+        <div class="navbar-header">
+          <div class="logo"><a href="../index.html"></a></div>
+          <a href="modules.html#" class="navbar-toggle collapsed ssm-toggle-nav">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+        </div>
+        <div class="ssm-overlay ssm-toggle-nav"></div>  
+        <ul class="nav navbar-nav navbar-right panel-ul">
+          <li class="nav-list"><a href="../about.html">О сервисе</a></li>
+          <li class="nav-list"><a href="../tariffs.html">Тарифы</a></li>
+          <li class="nav-list"><a href="sci.html">Документация</a></li>
+          <li class="nav-list"><a href="../support.html">Контакты</a></li>
+          <li class="creat-but"><a href="../panel/register.html">Подключить магазин</a></li>
+          <li class="auth-but"><a href="../panel/login.html">Войти</a></li>
+        </ul>
+      </div>
+    </header>
+<div class="content"> 
+  <div class="thumb-box-static">
+    <div class="container awidth"><h1>Документация</h1></div>     
+      <div class="container box-static">
+        <div class="col-lg-3 col-sm-3 col-xs-6 doc-menu nl1">
+            <div class="doc-list-block">  
+                <span class="doc-list-cat">Документация SCI</span>
+                <div class="doc-list-box">
+                  <ul class="doc-list-m">
+                    <li><a href="sci.html">Форма оплаты</a></li>
+                    <li><a href="sci/notification.html">Оповещение об оплате</a></li>
+                    <li><a href="sci/success.html">Переадресация после успешной оплаты</a></li>
+                    <li><a href="sci/fail.html">Переадресация после неуспешной оплаты</a></li>
+                    <li><a href="sci/method-list.html">Список платежных систем</a></li>
+                  </ul>
+                </div> 
+                <span class="doc-list-cat">Документация API</span>
+                <div class="doc-list-box">
+                  <ul class="doc-list-m">
+                    <li><a href="api.html">Текущий баланс</a></li>
+                    <li><a href="api/rates.html">Курсы конвертации валют</a></li>
+                    <li><a href="api/commissions.html">Комиссии проекта</a></li>
+                    <li><a href="api/payments.html">Информация о платежах</a></li>
+                    <li><a href="api/create-payout.html">Создание выплаты</a></li>
+                    <li><a href="api/payouts.html">Информация о выплатах</a></li>
+                    <li><a href="api/ip.html">IP адреса сервиса</a></li>
+                    <li><a href="api/errors.html">Коды ошибок</a></li>
+                  </ul>
+                </div> 
+                <span class="doc-list-cat">Модули CMS</span>
+                <div class="doc-list-box" style="display:block;">
+                  <ul class="doc-list-m">
+                    <li><a href="modules.html" class="active">Список модулей</a></li>
+                  </ul>
+                </div> 
+            </div> 
+        </div>
+        <div class="col-lg-9 col-sm-9 col-xs-6 doc-box nl3"> 
+          <div class="mob-doc-menu">
+            <select onchange="location = this.options[this.selectedIndex].value;">
+              <optgroup label="Документация SCI">
+                <option value="/doc/sci">Форма оплаты</option>
+                <option value="/doc/sci/notification">Оповещение об оплате</option>
+                <option value="/doc/sci/success">Переадресация после успешной оплаты</option>
+                <option value="/doc/sci/fail">Переадресация после неуспешной оплаты</option>
+                <option value="/doc/sci/method-list">Список платежных систем</option>
+              </optgroup>
+              <optgroup label="Документация API">
+                <option value="/doc/api">Текущий баланс</option>
+                <option value="/doc/api/rates">Курсы конвертации валют</option>
+                <option value="/doc/api/commissions">Комиссии проекта</option>
+                <option value="/doc/api/payments">Информация о платежах</option>
+                <option value="/doc/api/create-payout">Создание выплаты</option>
+                <option value="/doc/api/payouts">Информация о выплатах</option>
+                <option value="/doc/api/ip">IP адреса сервиса</option>
+                <option value="/doc/api/errors">Коды ошибок</option>
+              </optgroup>
+              <optgroup label="Модули CMS">
+                <option value="/doc/modules" selected="">Список модулей</option>
+              </optgroup>
+            </select>
+          </div>
+<div style="padding:0; margin-bottom:10px" class="col-lg-3 col-sm-4 col-xs-6 col-ft">
+    <a href="../upload/plugins/amiro.zip"><div class="module_block"><img src="../template/img/modules/amiro.png"></div></a>
+</div>
+
+<div style="padding:0; margin-bottom:10px" class="col-lg-3 col-sm-4 col-xs-6 col-ft">
+    <a href="../upload/plugins/woocommerce.zip"><div class="module_block"><img src="../template/img/modules/wc.png"></div></a>
+</div>
+
+<div style="padding:0; margin-bottom:10px" class="col-lg-3 col-sm-4 col-xs-6 col-ft">
+    <a href="../upload/plugins/prestashop.zip"><div class="module_block"><img src="../template/img/modules/ps.png"></div></a>
+</div>
+
+<div style="padding:0; margin-bottom:10px" class="col-lg-3 col-sm-4 col-xs-6 col-ft">
+    <a href="../upload/plugins/opencart.zip"><div class="module_block"><img src="../template/img/modules/oc.png"></div></a>
+</div>
+
+<div style="padding:0; margin-bottom:10px" class="col-lg-3 col-sm-4 col-xs-6 col-ft">
+    <a href="../upload/plugins/umi-cms.zip"><div class="module_block"><img src="../template/img/modules/umi.png"></div></a>
+</div>
+
+<div style="padding:0; margin-bottom:10px" class="col-lg-3 col-sm-4 col-xs-6 col-ft">
+    <a href="../upload/plugins/cs-cart.zip"><div class="module_block"><img src="../template/img/modules/cs-cart.png"></div></a>
+</div>
+
+<div style="padding:0; margin-bottom:10px" class="col-lg-3 col-sm-4 col-xs-6 col-ft">
+    <a href="../upload/plugins/hostcms.zip"><div class="module_block"><img src="../template/img/modules/hostcms.png"></div></a>
+</div>
+
+<div style="padding:0; margin-bottom:10px" class="col-lg-3 col-sm-4 col-xs-6 col-ft">
+    <a href="../upload/plugins/whmcs.zip"><div class="module_block"><img src="../template/img/modules/whmcs.png"></div></a>
+</div>
+
+<div style="padding:0; margin-bottom:10px" class="col-lg-3 col-sm-4 col-xs-6 col-ft">
+    <a href="../upload/plugins/bitrix.zip"><div class="module_block"><img src="../template/img/modules/bitrix.png"></div></a>
+</div>
+
+<div style="padding:0; margin-bottom:10px" class="col-lg-3 col-sm-4 col-xs-6 col-ft">
+    <a href="../upload/plugins/drupal.zip"><div class="module_block"><img src="../template/img/modules/drupal.png"></div></a>
+</div>
+
+<div style="padding:0; margin-bottom:10px" class="col-lg-3 col-sm-4 col-xs-6 col-ft">
+    <a href="../upload/plugins/netcat.zip"><div class="module_block"><img src="../template/img/modules/netcat.png"></div></a>
+</div>
+
+<div style="padding:0; margin-bottom:10px" class="col-lg-3 col-sm-4 col-xs-6 col-ft">
+    <a href="../upload/plugins/dle.zip"><div class="module_block"><img src="../template/img/modules/dle.png"></div></a>
+</div>
+
+<div style="padding:0; margin-bottom:10px" class="col-lg-3 col-sm-4 col-xs-6 col-ft">
+    <a href="../upload/plugins/virtuemart.zip"><div class="module_block"><img src="../template/img/modules/virtuemart.png"></div></a>
+</div>
+
+<div style="padding:0; margin-bottom:10px" class="col-lg-3 col-sm-4 col-xs-6 col-ft">
+    <a href="../upload/plugins/shop-script.zip"><div class="module_block"><img src="../template/img/modules/shop-script.png"></div></a>
+</div>
+
+<div style="padding:0; margin-bottom:10px" class="col-lg-3 col-sm-4 col-xs-6 col-ft">
+    <a href="../upload/plugins/oscommerce.zip"><div class="module_block"><img src="../template/img/modules/oscommerce.png"></div></a>
+</div>
+
+<div style="padding:0; margin-bottom:10px" class="col-lg-3 col-sm-4 col-xs-6 col-ft">
+    <a href="../upload/plugins/phpshop.zip"><div class="module_block"><img src="../template/img/modules/phpshop.png"></div></a>
+</div>
+
+<div style="padding:0; margin-bottom:10px" class="col-lg-3 col-sm-4 col-xs-6 col-ft">
+    <a href="../upload/plugins/mine.zip"><div class="module_block"><img src="../template/img/modules/minecraft.png"></div></a>
+</div>
+<div class="clear"></div>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+      <div class="mob-footer-menu">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            <optgroup label="Главное">
+                <option value="/about">О сервисе</option>
+                <option value="/news" >Новости</option>
+                <option value="/requirements" >Требования к сайтам</option>
+                <option value="/agreement" >Публичная оферта</option>
+            </optgroup>
+            <optgroup label="Клиентам">
+                <option value="/help" >Помощь</option>
+                <option value="/tariffs" >Тарифы</option>
+                <option value="/doc/modules" selected="">CMS модули</option>
+                <option value="/doc/sci" >Документация</option>
+            </optgroup>
+            <optgroup label="Плательщикам">
+                <option value="/search" >Поиск платежа</option>
+                <option value="/support" >Контакты</option>
+                <option value="/instruction" >Инструкция по оплате</option>
+                <option value="/conditions" >Условия оплаты</option>
+            </optgroup>
+        </select>
+    </div>
+  <footer class="footer">
+   <ul class="footer_menu1">
+    <span>Главное</span>
+    <li><a href="../about.html">О сервисе</a></li>
+    <li><a href="../news.html">Новости</a></li>
+    <li><a href="../requirements.html">Требования к сайтам</a></li>
+    <li><a href="../agreement.html">Публичная оферта</a></li>
+  </ul>  
+  <ul class="footer_menu2">
+    <span>Клиентам</span>
+    <li><a href="../help.html">Помощь</a></li>
+    <li><a href="../tariffs.html">Тарифы</a></li>
+    <li><a href="modules.html">CMS модули</a></li>
+    <li><a href="sci.html">Документация</a></li>
+  </ul>  
+  <ul class="footer_menu3">
+    <span>Плательщикам</span>
+    <li><a href="../search.html">Поиск платежа</a></li>
+    <li><a href="../support.html">Контакты</a></li>
+    <li><a href="../instruction.html">Инструкция по оплате</a></li>
+    <li><a href="../conditions.html">Условия оплаты</a></li>
+  </ul>  
+  <div class="footer_menu4">
+    <div class="fcopy1">© AnyPay, 2016 — 2018. Все права защищены</div>
+    <div class="fcopy2">Универсальный агрегатор электронных платежей</div>
+    <div class="footer_social">
+      <a target="_blank" href="https://vk.com/anypayio" class="vk"></a> 
+      <a target="_blank" href="https://t.me/anypayio" class="tg"></a> 
+      <a href="../cdn-cgi/l/email-protection.html#a9dadcd9d9c6dbdde9c8c7d0d9c8d087c0c6" class="mail"></a>
+    </div>
+    <div class="footer_phone">+7 (499) 404 00 10</div>
+    <div class="footer_support"><a href="../support.html">Служба поддержки</a></div>
+  </div>
+  <div class="clear">
+  </footer>
+</div>
+</div>
+</div>
+<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../template/js/jquery.min.js"></script>
+<script src="../template/js/main.min.js"></script>
+<script src="../template/js/jquery.ui.totop.js"></script>
+<script src="../template/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="../template/js/mobMenu.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script src="../template/js/touchSwipe.min.js"></script>
+<script src="../template/js/slidemenu.js"></script>
+<script src="../template/js/pages.js@v=8"></script>
+<script src="../template/js/note.js"></script>
+<script src="../template/js/sticky.js@v=3"></script>
+<script src="../template/js/highlight.js@1"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

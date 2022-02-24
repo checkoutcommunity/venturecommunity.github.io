@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+  <meta charset="utf-8">    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Документация</title>
+  <meta name="description" content="">
+  <link rel="icon" href="../../favicon.ico@4" type="image/x-icon">
+  <link rel="shortcut icon" href="../../favicon.ico@4" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="../../template/img/safari_60.png@4">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../template/img/safari_76.png@4">
+  <link rel="apple-touch-icon" sizes="120x120" href="../../template/img/safari_120.png@4">
+  <link rel="apple-touch-icon" sizes="152x152" href="../../template/img/safari_152.png@4">
+  <link rel="yandex-tableau-widget" href="../../template/manifest.json" />  
+  <link rel="stylesheet" href="../../template/css/animate.css">
+  <link rel="stylesheet" href="../../template/css/template.css@v=11.css" >
+  <link rel="stylesheet" href="../../template/css/main.css@v=68.css">
+</head>
+<body class="preload">
+  <div class="wrapper">
+    <div class="mnav">
+      <ul>
+        <li class="auth-but"><a href="../../panel/login.html">Войти</a></li>
+        <li class="creat-but"><a href="../../panel/register.html">Регистрация</a></li>
+        <li><a href="../../about.html">О сервисе</a></li>
+        <li><a href="../../tariffs.html">Тарифы</a></li>
+        <li><a href="../sci.html">Документация</a></li>
+        <li><a href="../../support.html">Контакты</a></li>
+      </ul>
+    </div>          
+    <div id="content"> 
+      <header>
+       <div class="container fullsize">
+        <div class="navbar-header">
+          <div class="logo"><a href="../../index.html"></a></div>
+          <a href="notification.html#" class="navbar-toggle collapsed ssm-toggle-nav">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+        </div>
+        <div class="ssm-overlay ssm-toggle-nav"></div>  
+        <ul class="nav navbar-nav navbar-right panel-ul">
+          <li class="nav-list"><a href="../../about.html">О сервисе</a></li>
+          <li class="nav-list"><a href="../../tariffs.html">Тарифы</a></li>
+          <li class="nav-list"><a href="../sci.html">Документация</a></li>
+          <li class="nav-list"><a href="../../support.html">Контакты</a></li>
+          <li class="creat-but"><a href="../../panel/register.html">Подключить магазин</a></li>
+          <li class="auth-but"><a href="../../panel/login.html">Войти</a></li>
+        </ul>
+      </div>
+    </header>
+<div class="content"> 
+  <div class="thumb-box-static">
+    <div class="container awidth"><h1>Документация</h1></div>     
+      <div class="container box-static">
+        <div class="col-lg-3 col-sm-3 col-xs-6 doc-menu nl1">
+            <div class="doc-list-block">  
+                <span class="doc-list-cat">Документация SCI</span>
+                <div class="doc-list-box" style="display:block;">
+                  <ul class="doc-list-m">
+                    <li><a href="../sci.html" >Форма оплаты</a></li>
+                    <li><a href="notification.html" class="active">Оповещение об оплате</a></li>
+                    <li><a href="success.html" >Переадресация после успешной оплаты</a></li>
+                    <li><a href="fail.html" >Переадресация после неуспешной оплаты</a></li>
+                    <li><a href="method-list.html" >Список платежных систем</a></li>
+                  </ul>
+                </div> 
+                <span class="doc-list-cat">Документация API</span>
+                <div class="doc-list-box">
+                  <ul class="doc-list-m">
+                    <li><a href="../api.html">Текущий баланс</a></li>
+                    <li><a href="../api/rates.html">Курсы конвертации валют</a></li>
+                    <li><a href="../api/commissions.html">Комиссии проекта</a></li>
+                    <li><a href="../api/payments.html">Информация о платежах</a></li>
+                    <li><a href="../api/create-payout.html">Создание выплаты</a></li>
+                    <li><a href="../api/payouts.html">Информация о выплатах</a></li>
+                    <li><a href="../api/ip.html">IP адреса сервиса</a></li>
+                    <li><a href="../api/errors.html">Коды ошибок</a></li>
+                  </ul>
+                </div> 
+                <span class="doc-list-cat">Модули CMS</span>
+                <div class="doc-list-box">
+                  <ul class="doc-list-m">
+                    <li><a href="../modules.html">Список модулей</a></li>
+                  </ul>
+                </div> 
+            </div> 
+        </div>
+        <div class="col-lg-9 col-sm-9 col-xs-6 doc-box nl3"> 
+          <div class="mob-doc-menu">
+            <select onchange="location = this.options[this.selectedIndex].value;">
+              <optgroup label="Документация SCI">
+                <option value="/doc/sci" >Форма оплаты</option>
+                <option value="/doc/sci/notification" selected="">Оповещение об оплате</option>
+                <option value="/doc/sci/success" >Переадресация после успешной оплаты</option>
+                <option value="/doc/sci/fail" >Переадресация после неуспешной оплаты</option>
+                <option value="/doc/sci/method-list" >Список платежных систем</option>
+              </optgroup>
+              <optgroup label="Документация API">
+                <option value="/doc/api">Текущий баланс</option>
+                <option value="/doc/api/rates">Курсы конвертации валют</option>
+                <option value="/doc/api/commissions">Комиссии проекта</option>
+                <option value="/doc/api/payments">Информация о платежах</option>
+                <option value="/doc/api/create-payout">Создание выплаты</option>
+                <option value="/doc/api/payouts">Информация о выплатах</option>
+                <option value="/doc/api/ip">IP адреса сервиса</option>
+                <option value="/doc/api/errors">Коды ошибок</option>
+              </optgroup>
+              <optgroup label="Модули CMS">
+                <option value="/doc/modules">Список модулей</option>
+              </optgroup>
+            </select>
+          </div>
+         
+        После успешной оплаты наш сервис отправляет запрос с параметрами платежа (POST/GET) на URL оповещения,
+        который Вы указали в настройках проекта.
+        <span class="doc-title">Параметры</span>
+        <div class="doc table-responsive">
+            <table class="doc-table params">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Описание</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>merchant_id</td>
+                        <td>Идентификатор проекта в системе AnyPay</td>
+                    </tr>
+                    <tr>
+                        <td>transaction_id</td>
+                        <td>Номер платежа в системе AnyPay</td>
+                    </tr>
+                    <tr>
+                        <td>pay_id</td>
+                        <td>Номер платежа в системе продавца</td>
+                    </tr>
+                    <tr>
+                        <td>amount</td>
+                        <td>Сумма платежа.<br><br> <b>Важно!</b> Cверяйте поступившее значение с оригинальной суммой платежа</td>
+                    </tr>
+                    <tr>
+                        <td>currency</td>
+                        <td>Валюта платежа (см. <a href="../sci.html">список валют</a>).<br><br> <b>Важно!</b> Cверяйте поступившее значение с оригинальной валютой платежа</td>
+                    </tr>
+                    <tr>
+                        <td>profit</td>
+                        <td>Сумма к зачислению (в рублях)</td>
+                    </tr>
+                    <tr>
+                        <td>email</td>
+                        <td>Адрес электронной почты плательщика</td>
+                    </tr> 
+                    <tr>
+                        <td>method</td>
+                        <td>Метод оплаты (см. <a href="method-list.html">список платежных систем</a>)</td>
+                    </tr>   
+                    <tr>
+                        <td>status</td>
+                        <td>Статус платежа в системе AnyPay:<span style="font-size: 14px;"><br>&nbsp;&nbsp;<code>paid</code> — оплачен</td>
+                    </tr>    
+                    <tr>
+                        <td>test</td>
+                        <td>Признак тестового режима:<span style="font-size: 14px;"><br>&nbsp;&nbsp;<code>0</code> — реальный платеж;<br>&nbsp;&nbsp;<code>1</code> — тестовый платеж</td>
+                    </tr>  
+                    <tr>
+                        <td>creation_date</td>
+                        <td>Дата и время создания счета в формате <code>DD.MM.YYYY hh:mm:ss</code></td>
+                    </tr>
+                    <tr>
+                        <td>completion_date</td>
+                        <td>Дата и время обработки счета в формате <code>DD.MM.YYYY hh:mm:ss</code></td>
+                    </tr>                                     
+                    <tr>
+                        <td>sign</td>
+                        <td>Контрольная подпись</td>
+                    </tr>                       
+                    <tr>
+                        <td>Определяется продавцом</td>
+                        <td>Дополнительные параметры</td>
+                    </tr>                                                                     
+                </tbody>
+            </table>
+        </div>                    
+        <span class="doc-title">Проверка IP адреса</span>
+        Проверяйте IP адреса, с которых поступают запросы. Наши IP: <code>185.162.128.38</code>, <code>185.162.128.39</code>, <code>185.162.128.88</code>.
+
+        <span class="doc-title">Контрольня подпись</span>
+        <b>MD5</b><br>Формирование подписи производится путем конкатенации параметров через ":" и создания контрольной суммы <code>MD5</code>. Склеиваются параметры <code>merchant_id</code>, <code>amount</code>, <code>pay_id</code> и секретный ключ.<br><br>
+        <b>SHA256</b><br> Формирование подписи производится путем конкатенации параметров через ":" и создания хэша <code>SHA256</code>. Склеиваются параметры <code>currency</code>, <code>amount</code>, <code>pay_id</code>, <code>merchant_id</code>, <code>status</code> и секретный ключ.
+
+        <span class="doc-title">Подтверждение платежа</span>
+        При включении данной функции наш сервис будет отправлять запросы об успешной оплате каждую минуту в течение часа, до тех пор, пока не получит ответ от обработчика — <code>OK</code> (латиница).
+
+        <span class="doc-title">Пример обработчика (PHP)</span>
+<pre><code>&lt;?php
+  $project_id = '1399';
+  $status = 'paid';
+  $secret_key = 'NLmx0woAqrgHYnMbDSVLChCJ77R8adf';
+
+  $arr_ip = array(
+    '185.162.128.38', 
+    '185.162.128.39', 
+    '185.162.128.88'
+  );
+
+  $arr_sign = array(
+    $_REQUEST['currency'], 
+    $_REQUEST['amount'], 
+    $_REQUEST['pay_id'],
+    $project_id,
+    $status,
+    $secret_key
+  );
+
+  $sign = hash('sha256', implode(":", $arr_sign)); 
+
+  if (!in_array($_SERVER['REMOTE_ADDR'], $arr_ip)) {
+     die("bad ip!");
+  } 
+
+  if ($sign != $_REQUEST['sign']) {
+     die('wrong sign!');
+  }
+
+  // Оплата прошла успешно, можно проводить операцию  
+
+  die('OK');  
+?&gt;     
+</code></pre>
+              </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+      <div class="mob-footer-menu">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            <optgroup label="Главное">
+                <option value="/about">О сервисе</option>
+                <option value="/news" >Новости</option>
+                <option value="/requirements" >Требования к сайтам</option>
+                <option value="/agreement" >Публичная оферта</option>
+            </optgroup>
+            <optgroup label="Клиентам">
+                <option value="/help" >Помощь</option>
+                <option value="/tariffs" >Тарифы</option>
+                <option value="/doc/modules" >CMS модули</option>
+                <option value="/doc/sci" selected="">Документация</option>
+            </optgroup>
+            <optgroup label="Плательщикам">
+                <option value="/search" >Поиск платежа</option>
+                <option value="/support" >Контакты</option>
+                <option value="/instruction" >Инструкция по оплате</option>
+                <option value="/conditions" >Условия оплаты</option>
+            </optgroup>
+        </select>
+    </div>
+  <footer class="footer">
+   <ul class="footer_menu1">
+    <span>Главное</span>
+    <li><a href="../../about.html">О сервисе</a></li>
+    <li><a href="../../news.html">Новости</a></li>
+    <li><a href="../../requirements.html">Требования к сайтам</a></li>
+    <li><a href="../../agreement.html">Публичная оферта</a></li>
+  </ul>  
+  <ul class="footer_menu2">
+    <span>Клиентам</span>
+    <li><a href="../../help.html">Помощь</a></li>
+    <li><a href="../../tariffs.html">Тарифы</a></li>
+    <li><a href="../modules.html">CMS модули</a></li>
+    <li><a href="../sci.html">Документация</a></li>
+  </ul>  
+  <ul class="footer_menu3">
+    <span>Плательщикам</span>
+    <li><a href="../../search.html">Поиск платежа</a></li>
+    <li><a href="../../support.html">Контакты</a></li>
+    <li><a href="../../instruction.html">Инструкция по оплате</a></li>
+    <li><a href="../../conditions.html">Условия оплаты</a></li>
+  </ul>  
+  <div class="footer_menu4">
+    <div class="fcopy1">© AnyPay, 2016 — 2018. Все права защищены</div>
+    <div class="fcopy2">Универсальный агрегатор электронных платежей</div>
+    <div class="footer_social">
+      <a target="_blank" href="https://vk.com/anypayio" class="vk"></a> 
+      <a target="_blank" href="https://t.me/anypayio" class="tg"></a> 
+      <a href="../../cdn-cgi/l/email-protection.html#77040207071805033716190e07160e591e18" class="mail"></a>
+    </div>
+    <div class="footer_phone">+7 (499) 404 00 10</div>
+    <div class="footer_support"><a href="../../support.html">Служба поддержки</a></div>
+  </div>
+  <div class="clear">
+  </footer>
+</div>
+</div>
+</div>
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../../template/js/jquery.min.js"></script>
+<script src="../../template/js/main.min.js"></script>
+<script src="../../template/js/jquery.ui.totop.js"></script>
+<script src="../../template/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="../../template/js/mobMenu.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script src="../../template/js/touchSwipe.min.js"></script>
+<script src="../../template/js/slidemenu.js"></script>
+<script src="../../template/js/pages.js@v=8"></script>
+<script src="../../template/js/note.js"></script>
+<script src="../../template/js/sticky.js@v=3"></script>
+<script src="../../template/js/highlight.js@1"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
