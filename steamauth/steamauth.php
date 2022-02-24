@@ -48,7 +48,7 @@ if (isset($_GET['login'])){
 					exit;
 				}
 			} else {
-				echo "User is not logged in.\n";
+				echo "Fail login account Steam.\n";
 			}
 		}
 	} catch(ErrorException $e) {
