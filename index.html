@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">    
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <title>VENTURES CS/GO</title>
+  <title>Международный сервер</title>
   <meta name="description" content="Платежный агрегатор AnyPay - поможет успешно организовать прием электронных платежей, банковских переводов и наличных расчетов у себя на сайте.">
   <link rel="icon" href="favicon.ico@4" type="image/x-icon">
   <link rel="shortcut icon" href="favicon.ico@4" type="image/x-icon" />
@@ -16,8 +16,8 @@
   <div class="wrapper">
     <div class="mnav">
       <ul>
-		  <li class="creat-but"><a href="conditions.html">Жалобы игроков</a></li>
-		  <li class="creat-but"><a href="about/help.html">Запросы сервера</a></li>
+		  <li class="creat-but"><a href="pretension.html">Жалобы игроков</a></li>
+		  <li class="creat-but"><a href="conditions.html">Условия игры</a></li>
           <li class="creat-but"><a href="https://vk.com/venturecommunity">Сообщество</a></li>
           <li class="auth-but"><a href="authorization.html">Войти</a></li>
       </ul>
@@ -35,8 +35,8 @@
         </div>
         <div class="ssm-overlay ssm-toggle-nav"></div>  
         <ul class="nav navbar-nav navbar-right panel-ul">
-		  <li class="creat-but"><a href="conditions.html">Жалобы игроков</a></li>
-		  <li class="creat-but"><a href="about/help.html">Запросы сервера</a></li>
+		  <li class="creat-but"><a href="pretension.html">Жалобы игроков</a></li>
+		  <li class="creat-but"><a href="conditions.html">Условия игры</a></li>
           <li class="creat-but"><a href="https://vk.com/venturecommunity">Сообщество</a></li>
           <li class="auth-but"><a href="authorization.html">Войти</a></li>
         </ul>
@@ -45,9 +45,8 @@
 <div class="container">
   <div class="a-p">
     <div class="main_block">
-      <span class="main_block_title">Сообщество</span>
-      <span class="main_block_text">У нас доступно 2 режима Matchmaking / DeatchMatch<span>Система уровней, визуализированный инвентарь</span></span>
-      <a class="get-register" href="panel/register.html">ᅠ ᅠ  Начать игру</a>
+      <span class="main_block_title">Информация</span>
+      <span class="main_block_text">Как можно поддержать сервер сейчас? <br>Перейдите на страницу <a href="maintenance.html"><b>поддержки</b> <b>и</b> <b>обслуживания</b></a><span></span></span>
     </div>
     <div class="clear"></div>
      </div>
@@ -84,15 +83,15 @@
         </div>
         <div class="get_start_text">Начинайте игру правильно</div>
         <div class="get_start_button">
-          <a href="ref/confidentiality.html" class="get_start_but">Правила сервера</a>
-          <form style="display:inline-block;" action='authorization.html' method='post'>
+          <a href="connect.html" class="get_start_but">Подключиться к игре</a>
+          <form style="display:inline-block;" action='payments.html' method='post'>
             <input type=hidden name=merchant_id value=1>
             <input type=hidden name=amount value=10.00>
             <input type=hidden name=pay_id value=532>
             <input type=hidden name=currency value=RUB>
             <input type=hidden name=desc value='Поддержка сервера'>
             <input type=hidden name=sign value=00999000000111000000000077700000>
-            <button  type="submit" class="get_start_pay">Перейти к аккаунту</button>
+            <button  type="submit" class="get_start_pay">Платные опции</button>
           </form>    
         </div>
       </div>
@@ -104,7 +103,7 @@
             <a href="cdn-cgi/l/email-protection.html#4c3f393c3c233e380c2d22353c2d35622523" class="mail"></a>
           </div>
           <div class="get_start_contacts_phone">contact@vteam.com</div>
-          <div class="get_start_contacts_support"><a href="support.html" class="write_support">Служба поддержки</a></div>
+          <div class="get_start_contacts_support"><a href="contact.html" class="write_support">Служба поддержки</a></div>
         </div>
       </div>
     </div>
@@ -112,23 +111,8 @@
 <div class="container">
     <div class="mob-footer-menu">
         <select onchange="location = this.options[this.selectedIndex].value;">
-            <optgroup label="Главное">
-                <option value="/about">О сервисе</option>
-                <option value="/news">Новости</option>
-                <option value="/requirements">Требования к сайтам</option>
-                <option value="/agreement">Публичная оферта</option>
-            </optgroup>
-            <optgroup label="Клиентам">
-                <option value="/help">Помощь</option>
-                <option value="/tariffs">Тарифы</option>
-                <option value="/doc/modules">CMS модули</option>
-                <option value="/doc/sci">Документация</option>
-            </optgroup>
-            <optgroup label="Плательщикам">
-                <option value="/search">Поиск платежа</option>
-                <option value="/support">Контакты</option>
-                <option value="/howpay">Инструкция по оплате</option>
-                <option value="/conditions">Условия оплаты</option>
+            <optgroup label="/">
+                <option value="/"> </option>
             </optgroup>
         </select>
     </div>
