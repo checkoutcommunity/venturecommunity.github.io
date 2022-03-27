@@ -1,0 +1,295 @@
+$(document).ready(function () {
+	float();
+	$(".form-control").focus(function () {
+		$(this).removeClass("error")
+	});
+	$("#register").on("submit", function () {
+    var email = $("input[name='email']").val(),
+        password = $("input[name='password']").val(),
+        password_repeat = $("input[name='password_repeat']").val(),
+    regex = new RegExp(/^[a-z0-9._-]+@[a-z0-9-]+\.[a-z]{2,6}$/i);
+    if (!regex.test(email)) {
+      $("input[name='email']").addClass("error");
+      var erre = true
+    } else {
+      var erre = false
+    }
+    if (password.length < 8) {
+      $("input[name='password']").addClass("error");
+      var errp = true
+    } else {
+      var errp = false
+    }
+    if (password_repeat.length < 8 || password != password_repeat) {
+      $("input[name='password_repeat']").addClass("error");
+      var errpr = true
+    } else {
+      var errpr = false
+    }
+    if (!erre && !errp && !errpr) {
+      $(".form-box-note").hide("normal");
+      $(".pformbut").addClass("disabled").prop("disabled", true).html("<div class=\"preloader-wrapper small active authload\"><div class=\"spinner-layer spinner-green-only\"><div class=\"circle-clipper left\"><div class=\"circle\"></div></div><div class=\"gap-patch\"><div class=\"circle\"></div></div><div class=\"circle-clipper right\"><div class=\"circle\"></div></div></div></div>");
+      setTimeout(function () {
+        $.ajax({
+          type: "POST",
+          url: "/panel/register",
+          data: $(".form-horizontal").serialize() + "&register=true",
+          cache: !1,
+          dataType: "json",
+          success: function (c) {
+            if (c.error) {
+              $("#success").html("");
+              $("#error").html("<div class=\"form-box-note\"><div style=\"width:100%;\" class=\"form-danger\"><span class=\"error_ico\"></span><span class=\"info_text\">" + c.error + "</span></div></div>");
+              $(".form-box-note").show('normal');
+              $(".pformbut").removeClass("disabled").prop("disabled", false).html("\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f");
+              if(c.code == '1'){
+                $("input[name='password'], input[name='password_repeat']").val("").blur();
+                grecaptcha.reset();
+              }
+            } else if (c.success) {
+              $("#error").html("");
+              $("#success").html("<div class=\"form-box-note\"><div style=\"width:100%;\" class=\"form-success\"><span class=\"success_ico\"></span><span class=\"info_text\">" + c.success + "</span></div></div>");
+              $(".form-box-note").show('normal');
+              $(".pformbut").removeClass("disabled").prop("disabled", false).html("\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f");
+              $("input[name='email'], input[name='password'], input[name='password_repeat']").val("").blur();
+              grecaptcha.reset();
+            }
+          }, 
+          error: function () {
+            $("#success").html("");
+            $("#error").html("<div class=\"form-box-note\"><div style=\"width:100%;\" class=\"form-danger\"><span class=\"error_ico\"></span><span class=\"info_text\">\u041e\u0448\u0438\u0431\u043a\u0430\u0020\u0441\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u044f\u0020\u0441\u0020\u0441\u0435\u0440\u0432\u0435\u0440\u043e\u043c</span></div></div>");
+            $(".form-box-note").show('normal');
+            $(".pformbut").removeClass("disabled").prop("disabled", false).html("\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f");
+            grecaptcha.reset();
+          }
+        })
+      },
+      300)
+    }
+    return false;
+    });
+	$('#login').on('submit', function () {
+		var email = $('input[name="email"]').val(),
+		password = $('input[name="password"]').val(),
+		regex = new RegExp(/^[a-z0-9._-]+@[a-z0-9-]+\.[a-z]{2,6}$/i);
+		if (!regex.test(email)) {
+			$('input[name="email"]').addClass("error");
+			var erre = 1
+		} else {
+			var erre = 0
+		}
+		if (password.length < 6) {
+			$('input[name="password"]').addClass("error");
+			var errp = 1
+		} else {
+			var errp = 0
+		}
+		if (!erre && !errp) {
+			$(".form-box-note").hide("normal").val("");
+			$(".pformbut").addClass("disabled").prop("disabled", true).html("<div class=\"preloader-wrapper small active authload\"><div class=\"spinner-layer spinner-green-only\"><div class=\"circle-clipper left\"><div class=\"circle\"></div></div><div class=\"gap-patch\"><div class=\"circle\"></div></div><div class=\"circle-clipper right\"><div class=\"circle\"></div></div></div></div>");
+			setTimeout(function () {
+				$.ajax({
+					type: "POST",
+					url: "/panel/login",
+					data: $(".form-horizontal").serialize() + "&auth=true",
+					cache: !1,
+					dataType: "json",
+					success: function (c) {
+						if (c.error) {
+							$(".single").removeClass("form-box-note");
+							$("#error").html("<div class=\"form-box-note\"><div style=\"width:100%;\" class=\"form-danger\"><span class=\"error_ico\"></span><span class=\"info_text\">" + c.error + "</span></div></div>");
+							$(".form-box-note").show('normal');
+							if (c.code == 1) {
+								$('input[name="password"]').val('').focus();
+								grecaptcha.reset()
+							}
+							$(".pformbut").removeClass("disabled").prop("disabled", false).html("\u0412\u043e\u0439\u0442\u0438")
+						} else if (c.success) {
+							if (c.code == 0) {
+								window.location.replace("/panel/main")
+							} else if (c.code == 1) {
+								$(".form-new").hide().html("<div id=\"error\"></div><form class=\"form-horizontal\" id=\"econfirm\"><div class=\"psform\"><span>" + c.success + "</span><div class=\"pform float\"><input type=\"tel\" name=\"code\" maxlength=\"6\" class=\"form-control\" placeholder=\"\u041a\u043e\u0434 \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u044f\" autocomplete=\"off\"></div><div class=\"pform\"><button type=\"submit\" class=\"pformbut\">\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c</button></div><div class=\"prform\">\u041d\u0435\u0020\u043f\u043e\u043b\u0443\u0447\u0438\u043b\u0438\u0020\u043a\u043e\u0434\u003f\u0020<a>\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c\u0020\u043d\u043e\u0432\u044b\u0439</a></div></div></form>").fadeIn("100");
+								$("input[name='code']").focus();
+								confirm();
+								resend()
+							}
+						}
+					}, 
+                    error: function () {
+                        $(".single").removeClass("form-box-note");
+                        $("#error").html("<div class=\"form-box-note\"><div style=\"width:100%;\" class=\"form-danger\"><span class=\"error_ico\"></span><span class=\"info_text\">\u041e\u0448\u0438\u0431\u043a\u0430\u0020\u0441\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u044f\u0020\u0441\u0020\u0441\u0435\u0440\u0432\u0435\u0440\u043e\u043c</span></div></div>");
+                        $(".form-box-note").show('normal');
+                        $(".pformbut").removeClass("disabled").prop("disabled", false).html("\u0412\u043e\u0439\u0442\u0438");
+                        grecaptcha.reset();
+                    }
+				})
+			},
+			300)
+		}
+		return false;
+	});
+	$("#forgot").on("submit", function () {
+    var email = $("input[name='email']").val()
+    regex = new RegExp(/^[a-z0-9._-]+@[a-z0-9-]+\.[a-z]{2,6}$/i);
+    if (!regex.test(email)) {
+      $("input[name='email']").addClass("error");
+    } else {
+      $(".form-box-note").hide("normal");
+      $(".pformbut").addClass("disabled").prop("disabled", true).html("<div class=\"preloader-wrapper small active authload\"><div class=\"spinner-layer spinner-green-only\"><div class=\"circle-clipper left\"><div class=\"circle\"></div></div><div class=\"gap-patch\"><div class=\"circle\"></div></div><div class=\"circle-clipper right\"><div class=\"circle\"></div></div></div></div>");
+      setTimeout(function () {
+        $.ajax({
+          type: "POST",
+          url: "/panel/forgot",
+          data: $(".form-horizontal").serialize() + "&forgot=true",
+          cache: !1,
+          dataType: "json",
+          success: function (c) {
+            if (c.error) {
+              $("#success").html("");
+              $("#error").html("<div class=\"form-box-note\"><div style=\"width:100%;\" class=\"form-danger\"><span class=\"error_ico\"></span><span class=\"info_text\">" + c.error + "</span></div></div>");
+              $(".form-box-note").show('normal');
+              $(".pformbut").removeClass("disabled").prop("disabled", false).html("\u0412\u043e\u0441\u0441\u0442\u0430\u043d\u043e\u0432\u0438\u0442\u044c");
+              if(c.code == '1'){
+                grecaptcha.reset();
+              }
+            } else if (c.success) {
+              $("#error").html("");
+              $("#success").html("<div class=\"form-box-note\"><div style=\"width:100%;\" class=\"form-success\"><span class=\"success_ico\"></span><span class=\"info_text\">" + c.success + "</span></div></div>");
+              $(".form-box-note").show('normal');
+              $(".pformbut").removeClass("disabled").prop("disabled", false).html("\u0412\u043e\u0441\u0441\u0442\u0430\u043d\u043e\u0432\u0438\u0442\u044c");
+              $("input[name='email']").val("").blur();
+              grecaptcha.reset();
+            }
+          }, 
+          error: function () {
+            $("#success").html("");
+            $("#error").html("<div class=\"form-box-note\"><div style=\"width:100%;\" class=\"form-danger\"><span class=\"error_ico\"></span><span class=\"info_text\">\u041e\u0448\u0438\u0431\u043a\u0430\u0020\u0441\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u044f\u0020\u0441\u0020\u0441\u0435\u0440\u0432\u0435\u0440\u043e\u043c</span></div></div>");
+            $(".form-box-note").show('normal');
+            $(".pformbut").removeClass("disabled").prop("disabled", false).html("\u0412\u043e\u0441\u0441\u0442\u0430\u043d\u043e\u0432\u0438\u0442\u044c");
+            grecaptcha.reset();
+          }
+        })
+      },
+      300)
+    }
+    return false;
+    });
+});
+function float() {
+	$(".float input, .float textarea").each(function (e) {
+		$(this).wrap("<fieldset></fieldset>");
+		var tag = $(this).attr("placeholder");
+		$(this).attr("placeholder", "");
+		if (!$(this).val() == "") $(this).after('<label for="name" class="stay">' + tag + "</label>");
+		else $(this).after('<label for="name">' + tag + "</label>")
+	});
+	$(".float input, .float textarea").on("blur", function () {
+		if (!$(this).val() == "") $(this).next().addClass("stay");
+		else $(this).next().removeClass("stay")
+	})
+}
+function confirm() {
+	$("#econfirm").on("submit", function () {
+		var code = $('input[name="code"]').val(),
+		regex = new RegExp("^[0-9]{6}$");
+		if (!regex.test(code)) {
+			$("input[name='code']").addClass("error");
+			var errorcode = 1
+		} else {
+			var errorcode = 0
+		}
+		if (code == "back") {
+			$(".pformbut").addClass("disabled").prop("disabled", true).html("<div class=\"preloader-wrapper small active authload\"><div class=\"spinner-layer spinner-green-only\"><div class=\"circle-clipper left\"><div class=\"circle\"></div></div><div class=\"gap-patch\"><div class=\"circle\"></div></div><div class=\"circle-clipper right\"><div class=\"circle\"></div></div></div></div>");
+			setTimeout(function () {
+				$("#error").html("<div class=\"form-box-note\"><div style=\"width:100%;\" class=\"form-danger\"><span class=\"error_ico\"></span><span class=\"info_text\">Возникла ошибка. Попробуйте позже!</span></div></div>");
+			},
+			300)
+		}
+		if (!errorcode) {
+			$(".form-box-note").hide("normal");
+			$("input[name='code']").removeClass("error");
+			$(".pformbut").addClass("disabled").prop("disabled", true).html("<div class=\"preloader-wrapper small active authload\"><div class=\"spinner-layer spinner-green-only\"><div class=\"circle-clipper left\"><div class=\"circle\"></div></div><div class=\"gap-patch\"><div class=\"circle\"></div></div><div class=\"circle-clipper right\"><div class=\"circle\"></div></div></div></div>");
+			setTimeout(function () {
+				$.ajax({
+					type: "POST",
+					url: "/panel/login",
+					data: $(".form-horizontal").serialize(),
+					cache: !1,
+					dataType: "json",
+					success: function (c) {
+						if (c.error) {
+							if (c.code == 0) {
+								$("#error").html("<div class=\"form-box-note\"><div style=\"width:100%;\" class=\"form-danger\"><span class=\"error_ico\"></span><span class=\"info_text\">345354 " + c.error + "</span></div></div>").show();
+							} else if (c.code == 1) {
+								$("#error").html("<div class=\"form-box-note\"><div style=\"width:100%;\" class=\"form-danger\"><span class=\"error_ico\"></span><span class=\"info_text\">" + c.error + "</span></div></div>");
+								$(".form-box-note").show("normal");
+								$(".pformbut").removeClass("disabled").prop("disabled", false).html("\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c");
+								$('input[name="code"]').addClass("error")
+							} else if (c.code == 2) {
+								$(".float").html("<input type=\"hidden\" name=\"code\" value=\"back\">").hide();
+								$(".prform").html("").hide();
+								$(".psform span").html(c.error);
+								$(".pformbut").removeClass("disabled").prop("disabled", false).html("\u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u044c")
+							}
+						} else if (c.success) {
+							window.location.replace("/panel/main")
+						}
+					}
+				})
+			},
+			300)
+		}
+		return false
+	});
+	$(".form-control").focus(function () {
+		$(this).removeClass("error")
+	});
+	$("input[name='code']").on("keypress input paste", function () {
+		this.value = this.value.replace(/[^0-9]/g, "")
+	})
+}
+function resend() {
+	$(".prform a").one('click', function () {
+		$.ajax({
+			type: "POST",
+			url: "/panel/login",
+			data: {
+				resend: "true"
+			},
+			cache: !1,
+			dataType: "json",
+			success: function (c) {
+				if (c.error) {
+					if (c.code == 0) {
+						window.location.replace("/panel/login")
+					} else if (c.code == 1) {
+						$("#error").html("<div class=\"form-box-note\"><div style=\"width:100%;\" class=\"form-danger\"><span class=\"error_ico\"></span><span class=\"info_text\">" + c.error + "</span></div></div>");
+						$(".form-box-note").show("normal");
+						$(".pformbut").removeClass("disabled").prop("disabled", false).html("\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c")
+					}
+				} else if (c.success) {
+					$(".form-box-note").hide("normal");
+					$("input[name='code']").removeClass("error").val("").focus();
+					if (c.code == 0) {
+						$(".prform").hide().addClass("inactive").html("\u041d\u043e\u0432\u044b\u0439\u0020\u043a\u043e\u0434\u0020\u043c\u043e\u0436\u043d\u043e\u0020\u043e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c\u0020\u0447\u0435\u0440\u0435\u0437\u0020<i>60</i>\u0020\u0441\u0435\u043a\u002e").fadeIn("100");
+						var sec = $(".prform i").text(),
+						int;
+						int = setInterval(function () {
+							if (sec > 1) {
+								sec--;
+								$(".prform i").text(sec)
+							} else {
+								clearInterval(int);
+								$(".prform").hide().removeClass("inactive").html("\u041d\u0435\u0020\u043f\u043e\u043b\u0443\u0447\u0438\u043b\u0438\u0020\u043a\u043e\u0434\u003f\u0020<a>\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c\u0020\u043d\u043e\u0432\u044b\u0439</a>").fadeIn("100");
+								resend()
+							}
+						},
+						1000)
+					} else if (c.code == 1) {
+						$(".prform").hide().html("")
+					}
+				}
+			}
+		})
+	})
+}

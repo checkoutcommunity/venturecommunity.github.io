@@ -4883,7 +4883,7 @@ input[type='submit'].styler[disabled] {
 
 .get_mini_logo {
 	display: block;
-	background: #fff url(../img/main/logo-start.svg) no-repeat;
+	background: #fff url(../img/main/get_mini_logo.png) no-repeat;
 	position: absolute;
 	top: 14px;
 	left: 14px;
